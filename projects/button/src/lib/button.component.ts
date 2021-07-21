@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
+  selector: 'ui-button',
   template: `
     <button mat-raised-button [color]="color">{{label}}</button>
   `,
@@ -11,6 +11,7 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 export class ButtonComponent {
   @Input() label: string;
   @Input() color: string;
+  @Input() something: string;
 
   constructor() {}
 }
