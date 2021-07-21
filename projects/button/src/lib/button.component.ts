@@ -3,14 +3,17 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 @Component({
   selector: 'ui-button',
   template: `
-    <button mat-raised-button [color]="color">{{label}}</button>
+    <button mat-raised-button [disabled]="disabled" [color]="color">{{label}}</button>
   `,
-  styles: [],
+  styleUrls: [
+    '../../../../node_modules/@angular/material/prebuilt-themes/purple-green.css'
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
   @Input() label: string;
-  @Input() color: string;
+  @Input() disabled: boolean;
+  @Input() color: 'primary' | 'accent' | 'warn' | '';
   @Input() something: string;
 
   constructor() {}
